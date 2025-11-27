@@ -76,7 +76,7 @@ public class FacturaTestUnitaria {
     public void facturaTestInyector(){
         assertAll("Validar metodo inyector - Factura",
                 ()-> assertNotNull(factura.getCliente()),
-                ()-> assertEquals("Taipe", factura.getCliente().getApellidos())
+                ()-> assertEquals("Taipe", factura.getCliente().getApellido())
                 );
     }
     @Test

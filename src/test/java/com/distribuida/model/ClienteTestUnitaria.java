@@ -18,7 +18,7 @@ public class ClienteTestUnitaria {
                 () -> assertEquals(1,cliente.getIdCliente()),
                 () -> assertEquals("17453839565",cliente.getCedula()),
                 () -> assertEquals("Juan",cliente.getNombre()),
-                () -> assertEquals("Taipe",cliente.getApellidos()),
+                () -> assertEquals("Taipe",cliente.getApellido()),
                 () -> assertEquals("Av. amazonas y rio",cliente.getDireccion()),
                 () -> assertEquals("099676578",cliente.getTelefono()),
                 () -> assertEquals("jtaipe@gmail.com",cliente.getCorreo())
@@ -29,7 +29,7 @@ public class ClienteTestUnitaria {
         cliente.setIdCliente(2);
         cliente.setCedula("175487997822");
         cliente.setNombre("Juan2");
-        cliente.setApellidos("Taipe2");
+        cliente.setApellido("Taipe2");
         cliente.setDireccion("Av. amazonas y rio2");
         cliente.setTelefono("09967657822");
         cliente.setCorreo("jtaipe22@gmail.com");
@@ -38,7 +38,7 @@ public class ClienteTestUnitaria {
                 () -> assertEquals(2,cliente.getIdCliente()),
                 () -> assertEquals("175487997822",cliente.getCedula()),
                 () -> assertEquals("Juan2",cliente.getNombre()),
-                () -> assertEquals("Taipe2",cliente.getApellidos()),
+                () -> assertEquals("Taipe2",cliente.getApellido()),
                 () -> assertEquals("Av. amazonas y rio2",cliente.getDireccion()),
                 () -> assertEquals("09967657822",cliente.getTelefono()),
                 () -> assertEquals("jtaipe22@gmail.com",cliente.getCorreo())

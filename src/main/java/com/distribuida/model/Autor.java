@@ -2,23 +2,21 @@ package com.distribuida.model;
 
 public class Autor {
     private int idAutor;
-    private String nombreAutor;
-    private String apellidoAutor;
-    private String paisAutor;
-    private String direccionAutor;
-    private String telefonoAutor;
-    private String emailAutor;
+    private String nombre;
+    private String apellido;
+    private String pais;
+    private String direccion;
+    private String telefono;
+    private String correo;
 
-    public Autor() {}
-
-    public Autor(int idAutor, String nombreAutor, String apellidoAutor, String paisAutor, String direccionAutor, String telefonoAutor, String emailAutor) {
+    public Autor(int idAutor, String nombre, String apellido, String pais, String direccion, String telefono, String correo) {
         this.idAutor = idAutor;
-        this.nombreAutor = nombreAutor;
-        this.apellidoAutor = apellidoAutor;
-        this.paisAutor = paisAutor;
-        this.direccionAutor = direccionAutor;
-        this.telefonoAutor = telefonoAutor;
-        this.emailAutor = emailAutor;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.pais = pais;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.correo = correo;
     }
 
     public int getIdAutor() {
@@ -29,64 +27,64 @@ public class Autor {
         this.idAutor = idAutor;
     }
 
-    public String getNombreAutor() {
-        return nombreAutor;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreAutor(String nombreAutor) {
-        this.nombreAutor = nombreAutor;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidoAutor() {
-        return apellidoAutor;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidoAutor(String apellidoAutor) {
-        this.apellidoAutor = apellidoAutor;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getPaisAutor() {
-        return paisAutor;
+    public String getPais() {
+        return pais;
     }
 
-    public void setPaisAutor(String paisAutor) {
-        this.paisAutor = paisAutor;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
-    public String getDireccionAutor() {
-        return direccionAutor;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDireccionAutor(String direccionAutor) {
-        this.direccionAutor = direccionAutor;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getTelefonoAutor() {
-        return telefonoAutor;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTelefonoAutor(String telefonoAutor) {
-        this.telefonoAutor = telefonoAutor;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String getEmailAutor() {
-        return emailAutor;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmailAutor(String emailAutor) {
-        this.emailAutor = emailAutor;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     @Override
     public String toString() {
         return "Autor{" +
                 "idAutor=" + idAutor +
-                ", nombreAutor='" + nombreAutor + '\'' +
-                ", apellidoAutor='" + apellidoAutor + '\'' +
-                ", paisAutor='" + paisAutor + '\'' +
-                ", direccionAutor='" + direccionAutor + '\'' +
-                ", telefonoAutor='" + telefonoAutor + '\'' +
-                ", emailAutor='" + emailAutor + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", pais='" + pais + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", correo='" + correo + '\'' +
                 '}';
     }
 }

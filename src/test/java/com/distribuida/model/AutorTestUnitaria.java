@@ -17,12 +17,12 @@ public class AutorTestUnitaria {
     public void testAutorConstructor() {
         assertAll("Validar datos Autor - Constructor",
                 ()-> assertEquals(1,autor.getIdAutor()),
-                ()-> assertEquals("Mario",autor.getNombreAutor()),
-                ()-> assertEquals("Benalcazar",autor.getApellidoAutor()),
-                ()-> assertEquals("Alemania",autor.getPaisAutor()),
-                ()-> assertEquals("Av.rio blanco y rio negro",autor.getDireccionAutor()),
-                ()-> assertEquals("09945245663",autor.getTelefonoAutor()),
-                ()-> assertEquals("mbenalcazar@gmail.com",autor.getEmailAutor())
+                ()-> assertEquals("Mario",autor.getNombre()),
+                ()-> assertEquals("Benalcazar",autor.getApellido()),
+                ()-> assertEquals("Alemania",autor.getPais()),
+                ()-> assertEquals("Av.rio blanco y rio negro",autor.getDireccion()),
+                ()-> assertEquals("09945245663",autor.getTelefono()),
+                ()-> assertEquals("mbenalcazar@gmail.com",autor.getCorreo())
 
                 );
 
@@ -30,21 +30,21 @@ public class AutorTestUnitaria {
     @Test
     public void testAutorSetters() {
         autor.setIdAutor(2);
-        autor.setNombreAutor("Mario2");
-        autor.setApellidoAutor("Benalcazar2");
-        autor.setPaisAutor("Alemania2");
-        autor.setDireccionAutor("Av.rio2");
-        autor.setTelefonoAutor("0994524566322");
-        autor.setEmailAutor("mbenalcazar@gmail.com22");
+        autor.setNombre("Mario2");
+        autor.setApellido("Benalcazar2");
+        autor.setPais("Alemania2");
+        autor.setDireccion("Av.rio2");
+        autor.setTelefono("0994524566322");
+        autor.setCorreo("mbenalcazar@gmail.com22");
 
         assertAll("Validar datos Autor - Setters",
                 ()-> assertEquals(2,autor.getIdAutor()),
-                ()-> assertEquals("Mario2",autor.getNombreAutor()),
-                ()-> assertEquals("Benalcazar2",autor.getApellidoAutor()),
-                ()-> assertEquals("Alemania2",autor.getPaisAutor()),
-                ()-> assertEquals("Av.rio2",autor.getDireccionAutor()),
-                ()-> assertEquals("0994524566322",autor.getTelefonoAutor()),
-                ()-> assertEquals("mbenalcazar@gmail.com22",autor.getEmailAutor())
+                ()-> assertEquals("Mario2",autor.getNombre()),
+                ()-> assertEquals("Benalcazar2",autor.getApellido()),
+                ()-> assertEquals("Alemania2",autor.getPais()),
+                ()-> assertEquals("Av.rio2",autor.getDireccion()),
+                ()-> assertEquals("0994524566322",autor.getTelefono()),
+                ()-> assertEquals("mbenalcazar@gmail.com22",autor.getCorreo())
         );
 
     }

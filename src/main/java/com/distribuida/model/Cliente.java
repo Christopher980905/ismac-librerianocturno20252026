@@ -1,22 +1,36 @@
 package com.distribuida.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "cliente")
+
 public class Cliente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id_cliente")
     private int idCliente;
+    @Column (name = "cedula")
     private String cedula;
+    @Column (name = "nombre")
     private String nombre;
-    private String apellidos;
+    @Column (name = "apellido")
+    private String apellido;
+    @Column (name = "direccion")
     private String direccion;
+    @Column (name = "telefono")
     private String telefono;
+    @Column (name = "correo")
     private String correo;
 
     //contructores
     public Cliente(){ }
 
-    public Cliente(int idCliente, String cedula, String nombre, String apellidos, String direccion, String telefono, String correo) {
+    public Cliente(int idCliente, String cedula, String nombre, String apellido, String direccion, String telefono, String correo) {
         this.idCliente = idCliente;
         this.cedula = cedula;
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
@@ -56,12 +70,12 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getTelefono() {
@@ -86,7 +100,7 @@ public class Cliente {
                 "idCliente=" + idCliente +
                 ", cedula='" + cedula + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
+                ", apellido='" + apellido + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", correo='" + correo + '\'' +

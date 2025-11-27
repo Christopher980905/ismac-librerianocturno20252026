@@ -53,7 +53,7 @@ public class LibroTestUnitaria {
                 ()-> assertEquals("libro x 100pag",libro1.getPresentacion()),
                 ()-> assertEquals(12.50,libro1.getPrecio()),
                 () -> assertEquals("Infantil", libro1.getCategoria().getCategoria()),
-                () -> assertEquals("Mario", libro1.getAutor().getNombreAutor())
+                () -> assertEquals("Mario", libro1.getAutor().getNombre())
         );
 
     }
@@ -94,7 +94,7 @@ public class LibroTestUnitaria {
                 ()-> assertEquals("libro x 200pag",libro1.getPresentacion()),
                 ()-> assertEquals(24.50,libro1.getPrecio()),
                 () -> assertEquals("Infantil2", libro1.getCategoria().getCategoria()),
-                () -> assertEquals("Mario2", libro1.getAutor().getNombreAutor())
+                () -> assertEquals("Mario2", libro1.getAutor().getNombre())
         );
 
     }
@@ -126,7 +126,7 @@ public class LibroTestUnitaria {
                 () -> assertNotNull(libro1.getCategoria()),
                 () -> assertEquals("relato real antepasado", libro1.getCategoria().getDescripcion()),
                 () -> assertNotNull(libro1.getAutor()),
-                () -> assertEquals("Alemania", libro1.getAutor().getPaisAutor())
+                () -> assertEquals("Alemania", libro1.getAutor().getPais())
         );
 
     }
