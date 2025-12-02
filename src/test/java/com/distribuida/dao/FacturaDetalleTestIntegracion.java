@@ -40,9 +40,10 @@ public class FacturaDetalleTestIntegracion {
         facturaDetalles.forEach(System.out::println);
     }
 
+
     @Test
     public void testFacturaDetalleFindOne(){
-        Optional<FacturaDetalle> facturaDetalle = facturaDetalleRepository.findById(1L);
+        Optional<FacturaDetalle> facturaDetalle = facturaDetalleRepository.findById(1);
         assertTrue(facturaDetalle.isPresent());
         assertEquals(2, facturaDetalle.orElse(null).getCantidad());
         assertEquals(30.84, facturaDetalle.orElse(null).getSubtotal());
@@ -77,7 +78,7 @@ public class FacturaDetalleTestIntegracion {
         assertTrue(factura.isPresent());
         Optional<Libro> libro = libroRepository.findById(3);
         assertTrue(libro.isPresent());
-        Optional<FacturaDetalle> facturaDetalle = facturaDetalleRepository.findById(210L);
+        Optional<FacturaDetalle> facturaDetalle = facturaDetalleRepository.findById(211);
         assertTrue(facturaDetalle.isPresent());
 
 
@@ -101,10 +102,10 @@ public class FacturaDetalleTestIntegracion {
     //ELIMINAR DATOS DE LA BASE
     @Test
     public void testFacturaDetalleDelete(){
-        facturaDetalleRepository.deleteById(210L);{
-            facturaDetalleRepository.deleteById(210L);
+        facturaDetalleRepository.deleteById(212);{
+            facturaDetalleRepository.deleteById(212);
         }
-        assertFalse(facturaDetalleRepository.existsById(210L));
+        assertFalse(facturaDetalleRepository.existsById(212));
     }
 
 }
