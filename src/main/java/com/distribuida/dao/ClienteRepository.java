@@ -4,4 +4,5 @@ import com.distribuida.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
+    Integer idCliente(int idCliente);
 }
