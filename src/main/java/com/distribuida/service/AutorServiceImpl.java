@@ -26,7 +26,7 @@ public class AutorServiceImpl implements AutorService {
 
     @Override
     public Autor save(Autor autor) {
-        return null;
+        return autorRepository.save(autor);
     }
 
     @Override

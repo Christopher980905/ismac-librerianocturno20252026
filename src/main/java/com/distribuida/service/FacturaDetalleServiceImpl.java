@@ -26,7 +26,7 @@ public class FacturaDetalleServiceImpl implements FacturaDetalleService {
 
     @Override
     public FacturaDetalle save(FacturaDetalle facturaDetalle) {
-        return null;
+        return facturaDetalleRepository.save(facturaDetalle);
     }
 
     @Override
