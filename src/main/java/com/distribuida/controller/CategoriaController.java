@@ -1,37 +1,57 @@
 package com.distribuida.controller;
 
 import com.distribuida.model.Categoria;
-import com.distribuida.model.Cliente;
 import com.distribuida.service.CategoriaService;
-import com.distribuida.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/categorias")
+
 public class CategoriaController {
     @Autowired
-    private CategoriaService categoriaService;
+    private CategoriaService CategoriaService;
 
     @GetMapping
     public ResponseEntity<List<Categoria>> findAll(){
-        List<Categoria> categorias = categoriaService.findAll();
+        List<Categoria> categorias = CategoriaService.findAll();
         return ResponseEntity.ok().body(categorias);
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<Categoria> findOne(@PathVariable int id){
-        Optional<Categoria> categoria = categoriaService.findOne(id);
-        if(categoria == null){
+        Optional<Categoria> Categoria = CategoriaService.findOne(id);
+        if(Categoria == null){
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(categoria.orElse(null));
+        return ResponseEntity.ok(Categoria.orElse(null));
     }
+
+    @PostMapping
+    public ResponseEntity<Categoria> save(@RequestBody Categoria Categoria){
+
+        Categoria CategoriaNuevo = CategoriaService.save(Categoria);
+        return ResponseEntity.ok(CategoriaNuevo);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Categoria> update(@PathVariable int id, @RequestBody Categoria Categoria){
+        Categoria CategoriaActualizado = CategoriaService.update(id, Categoria);
+        if (CategoriaActualizado == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(CategoriaActualizado);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable int id){
+        CategoriaService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+    
 }
