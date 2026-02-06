@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { Autor } from '../../model/autor.model';
+import { MatTableDataSource } from '@angular/material/table';
 import { AutorService } from '../../services/autor';
 import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
-import { Autor } from '../../model/autor.model';
 
 @Component({
   selector: 'app-autor',
@@ -14,7 +14,6 @@ import { Autor } from '../../model/autor.model';
   styleUrl: './autor.css',
 })
 export class AutorComponent implements OnInit {
-
 
   @ViewChild('formularioAutor') formularioAutor!: ElementRef;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -125,6 +124,7 @@ export class AutorComponent implements OnInit {
     const filtro1 = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filtro1.trim().toLowerCase();
   }
+
 
 
 }

@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CategoriaComponent } from './components/categoria/categoria';
+import { LibroComponent } from './components/libro/libro';
 import { AutorComponent } from './components/autor/autor';
 
 
@@ -25,6 +26,7 @@ import { AutorComponent } from './components/autor/autor';
     App,
     ClienteComponent,
     CategoriaComponent,
+    LibroComponent,
     AutorComponent
   ],
   imports: [
