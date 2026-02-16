@@ -5,14 +5,14 @@ export interface Libro{
     idLibro: number
     titulo: string
     editorial: string
-    numPaginas: number
+    numeroPaginas: number
     edicion: string
     idioma: string
-    fechaPublicacion: Date
+    fecha_de_publicacion: Date
     descripcion: string
-    tipoPasta: string
-    ISBN: string
-    numEjemplares: number
+    tipo_de_pasta: string
+    isbn: string
+    num_ejemplares: number
     portada: string
     presentacion: string
     precio: number

@@ -21,6 +21,8 @@ import { NgForm } from '@angular/forms';
 })
 export class LibroComponent implements OnInit {
 
+
+
   libros: Libro[]= [];
   autores: Autor[]=[];
   categorias: Categoria[]=[];
@@ -28,8 +30,8 @@ export class LibroComponent implements OnInit {
   editar: boolean = false;
   idEditar: number | null=null;
   dataSource!: MatTableDataSource<Libro>;
-  seleccionarArchivo!: File;
-  imagenPrevia: string = "";
+  seleccionarArchivo: File | null = null; 
+  imagenPrevia: string | null = null;
   libroSeleccionado: Libro | null= null;
 
 
@@ -48,13 +50,13 @@ export class LibroComponent implements OnInit {
     private categoriaService: CategoriaService,
     private dialog: MatDialog,
     private http: HttpClient
-
   ){ }
 
   ngOnInit(): void {
     this.findAll();
     this.cargarAutores();
     this.cargarCategorias();
+    
   }
 
   findAll(): void {
@@ -183,9 +185,19 @@ compareCategorias(c1: Categoria, c2: Categoria): boolean{
 
 onFileSelected(event: any){
   this.seleccionarArchivo = event.target.files[0];
+
+  if (this.seleccionarArchivo) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagenPrevia = reader.result as string;
+      };
+      reader.readAsDataURL(this.seleccionarArchivo);
+    }
 }
 
 subirImagen(): void{
+  if (!this.seleccionarArchivo) return;
+
   const formData =new FormData();
   formData.append("file", this.seleccionarArchivo);
 
@@ -193,11 +205,17 @@ subirImagen(): void{
     formData.append("oldImage", this.libro.portada);
   }
 
-  this.http.post<{ ruta: string }>('http://localhost:8081/api/upload-portada', formData).subscribe(res => {
+  this.http.post<{ ruta: string }>('http://localhost:8081/api/uploads-portadas', formData).subscribe(res => {
     this.libro.portada = res.ruta;
-    this.imagenPrevia = res.ruta;
+    this.imagenPrevia = null;         // limpiar preview
+    this.seleccionarArchivo = null;   // limpiar selección de archivo
   });
 }
+ get imagenMostrar(): string | null {
+    if (this.imagenPrevia) return this.imagenPrevia;
+    if (this.libro?.portada) return 'http://localhost:8081/' + this.libro.portada;
+    return null;
+  }
 
 abrirModalDetalles(libro: Libro): void{
   this.libroSeleccionado = libro;
@@ -210,5 +228,7 @@ cerrarModal(): void{
   this.dialog.closeAll();
   this.libroSeleccionado = null;
 }
-
+  get portadaSeleccionada(): string | null {
+  return this.libroSeleccionado?.portada ? 'http://localhost:8081/' + this.libroSeleccionado.portada : null;
+}
 }
